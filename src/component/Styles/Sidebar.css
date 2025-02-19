@@ -1,0 +1,456 @@
+/* Sidebar.css */
+
+.sidebar {
+    width: 250px;
+    background-color: #f0f0f0;
+    padding: 22px;
+    box-sizing: border-box;
+    
+  }
+
+  .sidebar-item-task {
+    display: flex;
+    align-items: left;
+    gap: 0.6rem;
+    padding: 0.4rem;
+    border-radius: 20px;
+    cursor: pointer;
+    background-color: #ffffff; 
+  }
+  
+
+  .sidebar-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem;
+    border-radius: 4px;
+    cursor: pointer;
+    
+    position: relative;  
+  
+  }
+  
+  .sidebar-item:hover {
+    background-color: #e8ecf1;
+  }
+  
+  .sidebar-item-icon {
+    color: #666;
+    font-size: 1.2rem;
+  }
+  
+  .sidebar-item-text {
+    color: #444;
+    font-weight: 500;
+  }
+  
+  .unread-dot {
+    position:absolute;
+    width: 8px;
+    height: 8px;
+    background-color: #666;
+    border-radius: 50%;
+  }
+  
+  /* Direct Message Section */
+.direct-message-section {
+    margin-top: 1rem;
+  }
+  
+  /* Header: "Direct Message" + "+" button */
+  .direct-message-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+  }
+  
+  .add-button {
+    background: transparent;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+  }
+  
+  /* Users list */
+  .direct-message-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  /* Each user item */
+  .direct-message-item {
+    display: flex;
+    align-items: center;
+    padding: 0.4rem;
+    border-radius: 4px;
+    margin-bottom: 0.3rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    
+  }
+  
+  /* Hover effect */
+  .direct-message-item:hover {
+    background-color: #e8ecf1;
+  }
+  
+  /* Avatar */
+  .user-avatar {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 0.5rem;
+  }
+  
+  /* User name */
+  .user-name {
+    flex: 1;
+    font-size: 0.9rem;
+  }
+  
+  /* Status dot (green) */
+   .status-dot {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background-color: #2ecc71; 
+    border-radius: 50%;
+    margin-left: auto;
+   
+}
+  
+  /* More Conversation link */
+  .more-conversation {
+    margin-top: 0.5rem;
+  }
+  
+  .more-conversation a {
+    font-size: 0.85rem;
+    color: #2b6cb0;
+    text-decoration: underline;
+  }
+  
+  
+  /* Container styling for the sidebar */
+.sidebar-container {
+    width: 250px;
+    background-color: #f5f8fc;
+    padding: 1rem;
+    border-radius: 8px;
+  }
+  
+  /* Example existing items (My Task, Unread) */
+  .sidebar-item-task,
+  .sidebar-item-unread {
+    display: flex;
+    align-items: center;
+    padding: 0.5rem;
+    border-radius: 4px;
+    margin-bottom: 0.5rem;
+    cursor: pointer;
+    background-color: #fff;
+    border: 1px solid #ccc;
+  }
+  .sidebar-item-unread {
+    margin-bottom: 1rem;
+  }
+  
+  /* Direct Message Section */
+  .direct-message-section {
+    margin-bottom: 1.5rem;
+  }
+  .direct-message-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+  }
+  .direct-message-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  .direct-message-item {
+    display: flex;
+    align-items: center;
+    padding: 0.4rem;
+    border-radius: 4px;
+    margin-bottom: 0.3rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  .direct-message-item:hover {
+    background-color: #ffffff;
+  }
+  .direct-message-header {
+    cursor: pointer; 
+  }
+  .user-avatar {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 0.5rem;
+  }
+  .user-name {
+    flex: 1;
+    font-size: 0.9rem;
+  }
+  .status-dot {
+    width: 8px;
+    height: 8px;
+    background-color: #2ecc71; 
+    border-radius: 50%;
+    margin-left: auto;
+  }
+  .more-conversation {
+    margin-top: 0.5rem;
+  }
+  .more-conversation a {
+    font-size: 0.85rem;
+    color: #2b6cb0;
+    text-decoration:underline;
+  }
+  
+  
+  .projects-section {
+    margin-bottom: 1rem; 
+  }
+  
+  .projects-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    cursor: pointer;
+  }
+ 
+  .projects-arrow {
+    margin-right: 1px; 
+    font-size: 0.9rem; 
+  }
+  
+  .projects-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .project-item {
+    padding: 0.1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  .project-item:hover {
+    background-color: #ffffff;
+  }
+  /* profile-logo */
+  .profile-logo {
+    width: 22px;
+    height: 18px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 0.5rem;
+  }
+  .more-projects {
+    margin-top: 0.5rem;
+  }
+  .more-projects a {
+    font-size: 0.85rem;
+    color: #2b6cb0;
+    text-decoration: underline;
+  }
+  
+  
+  /* Add (+) Button */
+  .add-button {
+    background: transparent;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+  }
+  
+  .add-button:hover {
+    color: #007bff;
+  }
+  
+  /* Teams Section */
+.teams-section {
+    margin-bottom: 1.5rem;
+  }
+  .teams-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    cursor: pointer;
+  }
+  .teams-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  .team-item {
+    display: flex;
+    align-items: center;
+    padding: 0.4rem;
+    border-radius: 4px;
+    margin-bottom: 0.3rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  .team-item:hover {
+    background-color: #ffffff;
+  }
+  .team-icon {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+    margin-right: 0.5rem;
+  }
+  .team-name {
+    flex: 1;
+    font-size: 0.9rem;
+  }
+  .more-teams {
+    margin-top: 0.5rem;
+  }
+  .more-teams a {
+    font-size: 0.85rem;
+    color: #2b6cb0;
+    text-decoration: underline;
+  }
+  
+  /* Add (+) Button */
+  .add-button {
+    background: transparent;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    outline: none;
+  }
+  .add-button:hover {
+    color: #007bff;
+  }
+
+  /* 5) Channels Section */
+.channels-section {
+    margin-bottom: 1.5rem;
+  }
+  .channels-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    cursor: pointer;
+  }
+  .channels-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  .channel-item {
+    display: flex;
+    align-items: center;
+    padding: 0.4rem;
+    border-radius: 4px;
+    margin-bottom: 0.3rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  .channel-item:hover {
+    background-color: #ffffff;
+  }
+  .channel-icon {
+    margin-right: 0.5rem;
+  }
+  .channel-name {
+    flex: 1;
+    font-size: 0.9rem;
+  }
+  .more-channels {
+    margin-top: 0.5rem;
+  }
+  .more-channels a {
+    font-size: 0.85rem;
+    color: #2b6cb0;
+    text-decoration: underline;
+    ;
+  }
+  .more-channels a:hover {
+    text-decoration: underline;
+  }
+  
+  /*  Footer (Company + Profile) */
+  .footer-company {
+    font-size: 1rem; 
+    font-weight: 600; 
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo-360 {
+    color: #000; 
+  }
+  
+  .logo-task {
+    color: #007bff; 
+    margin-left: 2px; /* Tiny gap between "360" and "task" */
+  }
+  .footer-company,
+  .footer-profile {
+    display: flex;
+    align-items: center;
+    padding: 0.4rem 0;
+  }
+  .company-logo {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+    margin-right: 0.5rem;
+  }
+  .company-name {
+    font-size: 0.9rem;
+    font-weight: 600;
+  }
+  .footer-profile {
+    justify-content: space-between;
+  }
+  .profile-avatar {
+    width: 24px;
+    height: 24px;
+    margin-right: 0.5rem;
+    object-fit: contain;
+  }
+  .profile-name {
+    font-size: 0.9rem;
+    margin-right: auto;
+  }
+  .profile-arrow {
+    margin-left: 0.5rem;
+    font-size: 0.8rem;
+    cursor: pointer;
+  }
+  
+  /* Common Add (+) Button */
+  .add-button {
+    background: transparent;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    outline: none;
+  }
+  .add-button:hover {
+    color: #007bff;
+  }
