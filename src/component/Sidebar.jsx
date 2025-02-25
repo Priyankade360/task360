@@ -1,6 +1,4 @@
 import React, { useState } from "react"; 
-// import { FaTasks } from "react-icons/fa";
-// import { BiMessageSquareDetail } from "react-icons/bi";
 import "./Styles/Sidebar.css";
 
 import vectorIcon from './Assets/Vector.svg';
@@ -15,84 +13,36 @@ import starbucks from './Assets/Starbucks.png';
 import crocs from './Assets/Crocs.png';
 import chanel from './Assets/Chanel.png';
 import pizzahut from './Assets/PizzaHut.png'
-
 // teams
 import teams from './Assets/teams.svg';
 // channels
 import lock from './Assets/Lock.svg';
 import hash from './Assets/Hash.svg';
-
 // plusicon
 import plusIcon from './Assets/add.png';
 // companyLogo
 import companyLogo from './Assets/360tasklogo.svg';
-
 // profile-avatar
 import profileavatar from './Assets/image.svg';
 // profilenameArrow
 import profilenameArrow from './Assets/profile-add.png';
+
+
 // Initial users for Direct Messages
 const initialUsers = [
-  {
-    name: "Abhijeet Das",
-    avatar: avijeet,
-    status: "online",
-  },
-  {
-    name: "Jayanta Mahato",
-    avatar: jayanta,
-    status: "online",
-  },
-  {
-    name: "Sucharita Paul",
-    avatar: sucharita,
-    status: "online",
-  },
-  {
-    name: "Abhijeet Das",
-    avatar: avijeet,
-    status: "online",
-  },
-  {
-    name: "Jayanta Mahato",
-    avatar: jayanta,
-    status: "online",
-  },
-  {
-    name: "Sucharita Paul",
-    avatar: sucharita,
-    status: "online",
-  },
-  // ... additional initial users if needed
+  { name: "Abhijeet Das", avatar: avijeet, status: "online", unread: true },
+  { name: "Jayanta Mahato", avatar: jayanta, status: "online", unread: true },
+  { name: "Sucharita Paul", avatar: sucharita, status: "online", unread: false }
 ];
 
 // Initial project data
 const initialProjects = [
-  {
-    name: "Pizza Hut",
-    icon: pizzahut,
-  },
-  {
-    name: "Chanel",
-    icon:  chanel,
-  },
-  {
-    name: "Starbucks",
-    icon: starbucks,
-  },
-  {
-    name: "Adidas",
-    icon: adidas,
-  },
-  {
-    name: "Crocs",
-    icon: crocs,
-  },
-  {
-    name: "Apple",
-    icon: apple,
-  },
-  // ... additional initial projects if needed
+  {name: "Pizza Hut",icon: pizzahut,},
+  {name: "Chanel",icon:  chanel,},
+  {name: "Starbucks",icon: starbucks,},
+  {name: "Adidas",icon: adidas,},
+  {name: "Crocs",icon: crocs,},
+  {name: "Apple",icon: apple,},
 ];
 
 // Initial teams data
@@ -102,8 +52,7 @@ const initialTeams = [
   { name: "Development", icon: teams },
   { name: "Inernational Projects", icon: teams  },
   { name: "Digital Marketing", icon: teams },
-  { name: "Wordpress-Development", icon: teams  },
-  
+  { name: "Wordpress-Development", icon: teams  }, 
 ];
 
 // Initial channels data
@@ -129,6 +78,10 @@ const Sidebar = () => {
   const [teams, setTeams] = useState(initialTeams);
   const [channels, setChannels] = useState(initialChannels);
 
+  const [selectedChat, setSelectedChat] = useState(null);  // Track selected user 
+  const openChat = (user) => {
+    setSelectedChat(user);
+  };
   // A helper function to close all sections except the one specified
   const closeOtherSections = (section) => {
     if (section !== "messages") setIsMessageOpen(false);
@@ -174,21 +127,9 @@ const Sidebar = () => {
     closeOtherSections("messages");
     setIsMessageOpen(true);
     const moreUsers = [
-      {
-        name: "New User 1",
-        avatar: "https://www.pngall.com/wp-content/uploads/12/Avatar-Profile-Vector-PNG-File.png",
-        status: "online",
-      },
-      {
-        name: "New User 2",
-        avatar: "https://www.pngall.com/wp-content/uploads/12/Avatar-Profile-Vector-PNG-File.png",
-        status: "online",
-      },
-      {
-        name: "New User 3",
-        avatar: "https://e7.pngegg.com/pngimages/439/19/png-clipart-avatar-user-profile-icon-women-wear-frock-face-holidays.png",
-        status: "online",
-      },
+      { name: "Abhijeet Das", avatar: avijeet, status: "online", unread: true },
+      { name: "Jayanta Mahato", avatar: jayanta, status: "online", unread: true },
+      { name: "Sucharita Paul", avatar: sucharita, status: "online", unread: false },
     ];
     setDirectMessages((prev) => [...prev, ...moreUsers]);
   };
@@ -248,22 +189,13 @@ const Sidebar = () => {
     <div className="sidebar">
       {/* My Task */}
       <div className="sidebar-mytask-box">
-       <img 
-      src={vectorIcon} 
-      alt="" 
-      className="mytask-icon" 
-    />
+       <img src={vectorIcon} alt="" className="mytask-icon" />
         <span className="mytask-text">My Task</span>
       </div>
 
       {/* Unread */}
       <div className="unread-box">
-      <img 
-      src={vectorIcon2} 
-      alt="" 
-      className="unread-icon " 
-    />
-        {/* <BiMessageSquareDetail className="sidebar-unread-icon" /> */}
+      <img src={vectorIcon2} alt="" className="unread-icon " />
         <span className="unread-text">Unread</span>
       </div>
 
@@ -284,16 +216,16 @@ const Sidebar = () => {
         {isMessageOpen && (
           <ul className="direct-message-list">
             {directMessages.map((user, index) => (
-              <li key={index} className="direct-message-item">
-                <img
-                  src={user.avatar}
-                  alt={`${user.name}'s avatar`}
-                  className="user-avatar"
-                />
-                <span className="user-name">{user.name}</span>
-                {user.status === "online" && <span className="status-dot"></span>}
-              </li>
-            ))}
+    <li 
+      key={index} 
+      className={`direct-message-item ${selectedChat?.name === user.name ? "active-chat" : ""}`} 
+      onClick={() => openChat(user)}
+    >
+      <img src={user.avatar} alt={`${user.name}'s avatar`} className="user-avatar" />
+      <span className="user-name">{user.name}</span>
+      {user.status === "online" && <span className="status-dot"></span>}
+    </li>
+  ))}
           </ul>
         )}
         <div className="more-conversation">
@@ -303,6 +235,16 @@ const Sidebar = () => {
         </div>
       </div>
 
+      {selectedChat && (
+  <div className="chat-window">
+    <div className="chat-header">
+      <img src={selectedChat.avatar} alt={selectedChat.name} className="chat-avatar" />
+      <span className="chat-username">{selectedChat.name}</span>
+      <button onClick={() => setSelectedChat(null)} className="close-chat">X</button>
+          </div>
+          
+  </div>
+)}
       {/* Projects Section */}
       <div className="projects-section">
         <div className="projects-header">

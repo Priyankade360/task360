@@ -1,0 +1,27 @@
+.notification-panel {
+    margin-top: 20px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 10px;
+  }
+  
+  .notification-panel h4 {
+    margin-bottom: 10px;
+  }
+  
+  .notification-panel table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .notification-panel table th,
+  .notification-panel table td {
+    padding: 8px;
+    border: 1px solid #ddd;
+    text-align: left;
+  }
+  
+  .notification-panel table th {
+    background-color: #f5f5f5;
+  }
+  
